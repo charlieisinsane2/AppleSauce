@@ -5,6 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/style.css">
   <script src="https://kit.fontawesome.com/cb7290d6de.js" crossorigin="anonymous"></script>
+  <script>
+    window.onload = function(event) {
+    var btn = document.querySelectorAll("button.modal-button");
+    
+    // All page modals
+    var modals = document.querySelectorAll('.modal');
+    
+    // Get the <span> element that closes the modal
+    var spans = document.getElementsByClassName("close");
+    
+    // When the user clicks the button, open the modal
+    for (var i = 0; i < btn.length; i++) {
+    btn[i].onclick = function(e) {
+        e.preventDefault();
+        modal = document.querySelector(e.target.getAttribute("href"));
+        modal.style.display = "block";
+    }
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    for (var i = 0; i < spans.length; i++) {
+    spans[i].onclick = function() {
+        for (var index in modals) {
+          if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+        }
+    }
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event){
+      if (event.target.classList.contains('modal')) {
+        for (var index in modals) {
+          if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+        }
+      }
+    }
+    }
+  </script>
   <title>EaglercrackX</title>
   <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
   <nav class="nav">
@@ -37,305 +75,370 @@
   <main class="cards">
     <h1 class="cards__heading">EaglerForge Clients Archive</h1>
     <div class="cards cards">
-    <div class="cards__inner">
-      <!-- Start -->
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge Pre</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge PreRelease English unminified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_prerelease_unminified_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_prerelease_unminified_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+      <div class="cards__inner">
+        <div class="cards__card card">
+          <ul role="list" class="card__bullets flow">
+            <li>EaglerForge PreRelease</li>
+          </ul>
+          <button class="modal-button" class="fa-solid" href="#myModal1">Open</button>
+        </div>
+        <div id="myModal1" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">×</span>
+              <h2>EaglerForge PreReleases</h2>
+            </div>
+            <div class="modal-body"></div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge PreRelease English unminified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_prerelease_unminified_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_prerelease_unminified_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge PreRelease International unminified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_prerelease_unminified_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_prerelease_unminified_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge PreRelease web.zip unminified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_prerelease_unminified_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+          </div>
+        </div>
+        <div class="cards__card card">
+          <ul role="list" class="card__bullets flow">
+            <li>EaglerForge v1</li>
+          </ul>
+          <button class="modal-button" class="fa-solid" href="#myModal2">Open</button>
+        </div>
+        <div id="myModal2" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">×</span>
+              <h2>EaglerForge v1</h2>
+            </div>
+            <div class="modal-body"></div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1 English unminified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1_unminified_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1_unminified_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1 International unminified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1_unminified_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1_unminified_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1 web.zip unminified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1_unminified_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+          </div>
+        </div>
+        <div class="cards__card card">
+          <ul role="list" class="card__bullets flow">
+            <li>EaglerForge v1.1</li>
+          </ul>
+          <button class="modal-button" class="fa-solid" href="#myModal3">Open</button>
+        </div>
+        <div id="myModal3" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">×</span>
+              <h2>EaglerForge v1.1</h2>
+            </div>
+            <div class="modal-body"></div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.1 English minified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.1 International minified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.1 minified web.zip</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.1 English unminified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_unminified_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_unminified_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.1 International unminified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_unminified_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_unminified_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.1 web.zip unminified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_unminified_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+          </div>
+        </div>
+        <div class="cards__card card">
+          <ul role="list" class="card__bullets flow">
+            <li>EaglerForge v1.1.1</li>
+          </ul>
+          <button class="modal-button" class="fa-solid" href="#myModal4">Open</button>
+        </div>
+        <div id="myModal4" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">×</span>
+              <h2>EaglerForge v1.1.1</h2>
+            </div>
+            <div class="modal-body"></div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.1.1 English minified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.1.1_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.1.1_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.1.1 International minified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.1.1_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.1.1_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.1.1 minified web.zip</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.1.1_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+          </div>
+        </div>
+        <div class="cards__card card">
+          <ul role="list" class="card__bullets flow">
+            <li>EaglerForge v1.2</li>
+          </ul>
+          <button class="modal-button" class="fa-solid" href="#myModal5">Open</button>
+        </div>
+        <div id="myModal5" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">×</span>
+              <h2>EaglerForge v1.2</h2>
+            </div>
+            <div class="modal-body"></div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.2 English minified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.2 International minified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.2 web.zip minified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+          </div>
+        </div>
+        <div class="cards__card card">
+          <ul role="list" class="card__bullets flow">
+            <li>EaglerForge v1.2.1</li>
+          </ul>
+          <button class="modal-button" class="fa-solid" href="#myModal6">Open</button>
+        </div>
+        <div id="myModal6" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">×</span>
+              <h2>EaglerForge v1.2.1</h2>
+            </div>
+            <div class="modal-body"></div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.2.1 English minified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.2.1 International minified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.2.1 web.zip minified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.2.1 English unminified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_unminified_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_unminified_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.2.1 International unminified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_unminified_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_unminified_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.2.1 web.zip unminified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_unminified_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+          </div>
+        </div>
+        <div class="cards__card card">
+          <ul role="list" class="card__bullets flow">
+            <li>EaglerForge v1.2.2</li>
+          </ul>
+          <button class="modal-button" class="fa-solid" href="#myModal7">Open</button>
+        </div>
+        <div id="myModal7" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">×</span>
+              <h2>EaglerForge v1.2.2</h2>
+            </div>
+            <div class="modal-body"></div>
+              <div class="cards__card card">
+                <ul role="list" class="card__bullets flow">
+                  <li>EaglerForge v1.2.2 English minified</li>
+                </ul>
+                <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+                <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+              </div>
+              <div class="cards__card card">
+                <ul role="list" class="card__bullets flow">
+                  <li>EaglerForge v1.2.2 International minified</li>
+                </ul>
+                <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+                <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+              </div>
+              <div class="cards__card card">
+                <ul role="list" class="card__bullets flow">
+                  <li>EaglerForge v1.2.2 web.zip minified</li>
+                </ul>
+                <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+              </div>
+              <div class="cards__card card">
+                <ul role="list" class="card__bullets flow">
+                  <li>EaglerForge v1.2.2 English unminified</li>
+                </ul>
+                <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_unminified_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+                <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_unminified_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+              </div>
+              <div class="cards__card card">
+                <ul role="list" class="card__bullets flow">
+                  <li>EaglerForge v1.2.2 International unminified</li>
+                </ul>
+                <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_unminified_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+                <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_unminified_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+              </div>
+              <div class="cards__card card">
+                <ul role="list" class="card__bullets flow">
+                  <li>EaglerForge v1.2.2 web.zip unminified</li>
+                </ul>
+                <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_unminified_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+              </div>
+          </div>
+        </div>
+        <div class="cards__card card">
+          <ul role="list" class="card__bullets flow">
+            <li>EaglerForge v1.2.3</li>
+          </ul>
+          <button class="modal-button" class="fa-solid" href="#myModal8">Open</button>
+        </div>
+        <div id="myModal8" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">×</span>
+              <h2>EaglerForge v1.2.3</h2>
+            </div>
+            <div class="modal-body"></div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.2.3 English minified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.2.3 International minified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.2.3 web.zip minified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.2.3 English unminified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_unminified_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_unminified_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.2.3 International unminified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_unminified_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_unminified_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+            <div class="cards__card card">
+              <ul role="list" class="card__bullets flow">
+                <li>EaglerForge v1.2.3 web.zip unminified</li>
+              </ul>
+              <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_unminified_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
+            </div>
+          </div>
+        </div>
+        <!-- End -->
+        <div class="overlay cards__inner"></div>
       </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge Pre</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge PreRelease International unminified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_prerelease_unminified_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_prerelease_unminified_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge Pre</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge PreRelease web.zip unminified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_prerelease_unminified_web.zip" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_prerelease_unminified_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1 English unminified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1_unminified_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1_unminified_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1 International unminified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1_unminified_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1_unminified_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1 web.zip unminified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1_unminified_web.zip" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1_unminified_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.1</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.1 English minified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.1</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.1 International minified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.1</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.1 minified web.zip</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_web.zip" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.1</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.1 English unminified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_unminified_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_unminified_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.1</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.1 International unminified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_unminified_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_unminified_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.1</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.1 web.zip unminified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_unminified_web.zip" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.1_unminified_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.1.1</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.1.1 English minified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.1.1_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.1.1_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.1.1</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.1.1 International minified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.1.1_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.1.1_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.1.1</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.1.1 web.zip minified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.1.1_web.zip" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.1.1_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2 English minified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2 International minified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2 web.zip minified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2_web.zip" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2.1</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2.1 English minified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2.1</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2.1 International minified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2.1</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2.1 web.zip minified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_web.zip" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2.1</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2.1 English unminified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_unminified_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_unminified_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2.1</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2.1 International unminified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_unminified_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_unminified_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2.1</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2.1 web.zip unminified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_unminified_web.zip" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.1_unminified_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2.2</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2.2 English minified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2.2</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2.2 International minified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2.2</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2.2 web.zip minified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_web.zip" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2.2</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2.2 English unminified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_unminified_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_unminified_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2.2</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2.2 International unminified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_unminified_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_unminified_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2.2</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2.2 web.zip unminified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_unminified_web.zip" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.2_unminified_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2.3</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2.3 English minified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2.3</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2.3 International minified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2.3</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2.3 web.zip minified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_web.zip" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2.3</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2.3 English unminified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_unminified_1.8_Offline_en_US.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_unminified_1.8_Offline_en_US.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2.3</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2.3 International unminified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_unminified_1.8_Offline_International.html" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_unminified_1.8_Offline_International.html" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <div class="cards__card card">
-        <h2 class="card__heading">EaglerForge v1.2.3</h2>
-        <ul role="list" class="card__bullets flow">
-          <li>Version: EaglerForge v1.2.3 web.zip unminified</li>
-        </ul>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_unminified_web.zip" class="card__cta cta"><i class="fa-solid fa-play"></i>&nbsp Play</a>
-        <a href="/clients/1.8/EaglerForge/EaglerForge_1.2.3_unminified_web.zip" class="card__cta cta" download><i class="fa-solid fa-download"></i>&nbsp Download</a>
-      </div>
-      <!-- End -->
-      <div class="overlay cards__inner"></div>
     </div>
   </main>
 </body>
