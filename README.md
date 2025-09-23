@@ -10,3 +10,4 @@
 
 
 # [Main Eaglercrack Archive Repository](https://github.com/eaglercrack/archive)
+# Just letting it be know, this is NOT updated, and this does NOT contain any 1.12 or new client based content. I would recommend downloading clients directly from the development teams organization. 
